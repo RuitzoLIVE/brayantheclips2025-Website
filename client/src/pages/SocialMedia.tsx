@@ -4,6 +4,7 @@ import { YouTubeVideoCard } from "@/components/YouTubeVideoCard";
 import { instagramReels, youtubeVideos } from "@/lib/socialMediaData";
 import { Link } from "wouter";
 import { ArrowLeft, Instagram, Youtube } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function SocialMedia() {
   return (
@@ -19,6 +20,7 @@ export default function SocialMedia() {
             </Link>
             <h1 className="text-2xl font-bold text-foreground">Redes Sociales</h1>
           </div>
+          <ThemeToggle />
         </div>
       </header>
 

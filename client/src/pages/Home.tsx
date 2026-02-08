@@ -5,6 +5,7 @@ import { clips } from "@/lib/clipsData";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Twitch, Share2 } from "lucide-react";
 import { Link } from "wouter";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -34,6 +35,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <Link href="/redes-sociales">
                 <Button variant="outline" className="gap-2">
                   <Share2 className="w-4 h-4" />
