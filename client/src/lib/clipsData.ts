@@ -2,7 +2,7 @@ export interface Clip {
   id: string;
   title: string;
   views: number;
-  category: "reactions" | "absurd" | "gameplay" | "community";
+  category: "reactions" | "absurd" | "gameplay" | "community" | "epic" | "dark_humor";
   duration: string;
   date: string;
   clipper: string;
@@ -78,7 +78,7 @@ export const clips: Clip[] = [
     id: "7",
     title: "*Hace Un Rito Satanico E invoca a Mutumbú*",
     views: 48,
-    category: "absurd",
+    category: "dark_humor",
     duration: "0:30",
     date: "2 months ago",
     clipper: "ruitzolive",
@@ -89,7 +89,7 @@ export const clips: Clip[] = [
     id: "8",
     title: "TorcionTesticular AAAAAAAAAAAAA🗣️🔥",
     views: 44,
-    category: "reactions",
+    category: "dark_humor",
     duration: "1:00",
     date: "8 months ago",
     clipper: "ruitzolive",
@@ -99,7 +99,7 @@ export const clips: Clip[] = [
     id: "9",
     title: "me la pelaste cabron",
     views: 41,
-    category: "community",
+    category: "epic",
     duration: "0:23",
     date: "9 months ago",
     clipper: "mictipup666",
@@ -109,7 +109,7 @@ export const clips: Clip[] = [
     id: "10",
     title: "Regrese por Decimosexta vez",
     views: 41,
-    category: "community",
+    category: "epic",
     duration: "0:27",
     date: "2 years ago",
     clipper: "cuddlyantonio",
@@ -122,6 +122,8 @@ export const categoryLabels: Record<string, string> = {
   absurd: "Momentos Absurdos",
   gameplay: "Momentos de Juego",
   community: "Interacciones con Chat",
+  epic: "Momentos Épicos",
+  dark_humor: "Humor Oscuro",
 };
 
 export const categoryDescriptions: Record<string, string> = {
@@ -129,4 +131,6 @@ export const categoryDescriptions: Record<string, string> = {
   absurd: "Situaciones extrañas y divertidas sin contexto",
   gameplay: "Jugadas graciosas y errores en videojuegos",
   community: "Interacciones divertidas con la audiencia",
+  epic: "Logros, eventos especiales y momentos memorables",
+  dark_humor: "Bromas pesadas, sarcasmo e humor oscuro",
 };

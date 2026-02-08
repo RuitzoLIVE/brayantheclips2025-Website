@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { categoryLabels, categoryDescriptions } from "@/lib/clipsData";
-import { Zap, Sparkles, Gamepad2, MessageCircle } from "lucide-react";
+import { Zap, Sparkles, Gamepad2, MessageCircle, Trophy, Laugh } from "lucide-react";
 
 interface CategoryFilterProps {
   selectedCategory: string | null;
@@ -8,18 +8,22 @@ interface CategoryFilterProps {
 }
 
 export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryFilterProps) {
-  const categories = [
+
+
+  const allCategories = [
     { id: "reactions", icon: Zap },
     { id: "absurd", icon: Sparkles },
     { id: "gameplay", icon: Gamepad2 },
     { id: "community", icon: MessageCircle },
+    { id: "epic", icon: Trophy },
+    { id: "dark_humor", icon: Laugh },
   ];
 
   return (
     <div className="space-y-4">
       <div>
         <h3 className="text-sm font-semibold text-foreground mb-3">Filtrar por Categoría</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
           {/* All Button */}
           <Button
             onClick={() => onCategoryChange(null)}
@@ -31,7 +35,7 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
           </Button>
 
           {/* Category Buttons */}
-          {categories.map(({ id, icon: Icon }) => (
+          {allCategories.map(({ id, icon: Icon }) => (
             <Button
               key={id}
               onClick={() => onCategoryChange(id)}
