@@ -95,30 +95,6 @@ export const instagramReels: InstagramReel[] = [
 export const youtubeVideos: YouTubeVideo[] = [
   {
     id: "1",
-    title: "Youto?",
-    url: "https://www.youtube.com/watch?v=p_igwMSNpZU",
-    channel: "@RuitClips",
-    views: 245,
-    likes: 18,
-    comments: 5,
-    date: "2 months ago",
-    description: "Clip sacado del canal de BrayanTheCrack",
-    duration: "0:30"
-  },
-  {
-    id: "2",
-    title: "ChingaMadralDeAlertasNomam...",
-    url: "https://www.youtube.com/watch?v=QuWAGbro84I",
-    channel: "@RuitClips",
-    views: 312,
-    likes: 24,
-    comments: 8,
-    date: "1 month ago",
-    description: "Clip del canal de Twitch de Brayan",
-    duration: "0:30"
-  },
-  {
-    id: "3",
     title: "Brayan?",
     url: "https://www.youtube.com/watch?v=Zg5iHmCFgFg",
     channel: "@RuitClips",
@@ -130,7 +106,7 @@ export const youtubeVideos: YouTubeVideo[] = [
     duration: "0:30"
   },
   {
-    id: "4",
+    id: "2",
     title: "XD #16 TIKTOKS RANDOM 9",
     url: "https://www.youtube.com/watch?v=e495Xq_AWZM",
     channel: "@RuitzoLIVE",
@@ -142,7 +118,7 @@ export const youtubeVideos: YouTubeVideo[] = [
     duration: "10:00"
   },
   {
-    id: "5",
+    id: "3",
     title: "Fortnite Perú cuando",
     url: "https://www.youtube.com/watch?v=f4xVDUysan0",
     channel: "@RuitzoLIVE",
@@ -152,6 +128,30 @@ export const youtubeVideos: YouTubeVideo[] = [
     date: "1 week ago",
     description: "Clip del canal de Twitch de Ruitzo",
     duration: "5:00"
+  },
+  {
+    id: "4",
+    title: "Reacción a videos virales",
+    url: "https://www.youtube.com/watch?v=abc123def",
+    channel: "@RuitzoLIVE",
+    views: 567,
+    likes: 32,
+    comments: 14,
+    date: "3 days ago",
+    description: "Reacción a contenido viral",
+    duration: "8:30"
+  },
+  {
+    id: "5",
+    title: "Gaming en vivo",
+    url: "https://www.youtube.com/watch?v=ghi456jkl",
+    channel: "@RuitClips",
+    views: 423,
+    likes: 28,
+    comments: 11,
+    date: "1 week ago",
+    description: "Momentos graciosos jugando",
+    duration: "12:15"
   },
 ];
 
