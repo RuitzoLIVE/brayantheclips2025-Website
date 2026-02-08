@@ -136,7 +136,7 @@ export default function Home() {
         <div className="container py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2026 brayanthecrack Clips Gallery. Todos los clips pertenecen a su respectivos creadores.
+              © 2026 Ruitzo Studios Media. Todos los clips pertenecen a su respectivos creadores.
             </p>
             <div className="flex items-center gap-4">
               <a
