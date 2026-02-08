@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { YouTubeVideo } from "@/lib/socialMediaData";
-import { ExternalLink, Eye, Clock, Youtube } from "lucide-react";
+import { ExternalLink, Eye, Clock, Youtube, Heart, MessageCircle } from "lucide-react";
 
 interface YouTubeVideoCardProps {
   video: YouTubeVideo;
@@ -30,19 +30,39 @@ export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {
         </p>
 
         {/* Metadata Grid */}
-        <div className="grid grid-cols-2 gap-3 text-sm">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Eye className="w-4 h-4 text-red-500" />
-            <span className="font-medium">{video.views > 0 ? `${video.views} views` : "N/A"}</span>
+        <div className="grid grid-cols-4 gap-2 text-sm py-3 border-y border-border/50">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Eye className="w-4 h-4 text-red-500" />
+            </div>
+            <p className="font-semibold text-foreground text-xs">{video.views}</p>
+            <p className="text-xs text-muted-foreground">Vistas</p>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Clock className="w-4 h-4 text-red-500" />
-            <span className="font-medium">{video.duration}</span>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Heart className="w-4 h-4 text-red-500 fill-red-500" />
+            </div>
+            <p className="font-semibold text-foreground text-xs">{video.likes}</p>
+            <p className="text-xs text-muted-foreground">Likes</p>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <MessageCircle className="w-4 h-4 text-blue-500" />
+            </div>
+            <p className="font-semibold text-foreground text-xs">{video.comments}</p>
+            <p className="text-xs text-muted-foreground">Comentarios</p>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Clock className="w-4 h-4 text-yellow-500" />
+            </div>
+            <p className="font-semibold text-foreground text-xs">{video.duration}</p>
+            <p className="text-xs text-muted-foreground">Duración</p>
           </div>
         </div>
 
         {/* Additional Info */}
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
+        <div className="flex items-center justify-center text-xs text-muted-foreground">
           <span>{video.date}</span>
         </div>
 

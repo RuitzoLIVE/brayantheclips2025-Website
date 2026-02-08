@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { InstagramReel } from "@/lib/socialMediaData";
-import { ExternalLink, Heart, Instagram } from "lucide-react";
+import { ExternalLink, Heart, Instagram, MessageCircle, Share2 } from "lucide-react";
 
 interface InstagramReelCardProps {
   reel: InstagramReel;
@@ -30,15 +30,30 @@ export function InstagramReelCard({ reel }: InstagramReelCardProps) {
         </p>
 
         {/* Metadata Grid */}
-        <div className="grid grid-cols-2 gap-3 text-sm">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
-            <span className="font-medium">{reel.likes} likes</span>
+        <div className="grid grid-cols-3 gap-3 text-sm py-3 border-y border-border/50">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
+            </div>
+            <p className="font-semibold text-foreground">{reel.likes}</p>
+            <p className="text-xs text-muted-foreground">Likes</p>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-xs">{reel.date}</span>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <MessageCircle className="w-4 h-4 text-blue-500" />
+            </div>
+            <p className="font-semibold text-foreground">{reel.reposts}</p>
+            <p className="text-xs text-muted-foreground">Reposts</p>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Share2 className="w-4 h-4 text-green-500" />
+            </div>
+            <p className="font-semibold text-foreground">{reel.shares}</p>
+            <p className="text-xs text-muted-foreground">Shares</p>
           </div>
         </div>
+        <p className="text-xs text-muted-foreground text-center">{reel.date}</p>
 
         {/* View Button */}
         <Button

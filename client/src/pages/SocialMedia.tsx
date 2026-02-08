@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { InstagramReelCard } from "@/components/InstagramReelCard";
 import { YouTubeVideoCard } from "@/components/YouTubeVideoCard";
-import { instagramReels, youtubeVideos } from "@/lib/socialMediaData";
+import { TwitchClipCard } from "@/components/TwitchClipCard";
+import { instagramReels, youtubeVideos, twitchClips } from "@/lib/socialMediaData";
 import { Link } from "wouter";
-import { ArrowLeft, Instagram, Youtube } from "lucide-react";
+import { ArrowLeft, Instagram, Youtube, Twitch } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useState } from "react";
+
+type SocialPlatform = "twitch" | "youtube" | "instagram";
 
 export default function SocialMedia() {
+  const [activePlatform, setActivePlatform] = useState<SocialPlatform>("twitch");
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -26,62 +32,132 @@ export default function SocialMedia() {
 
       {/* Main Content */}
       <main className="container py-12">
-        {/* Instagram Reels Section */}
-        <section className="mb-16">
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-2">
-              <Instagram className="w-8 h-8 text-pink-500" />
-              <h2 className="text-3xl font-bold text-foreground">Instagram Reels</h2>
+        {/* Platform Tabs */}
+        <div className="flex gap-3 mb-12 border-b border-border/50 pb-6">
+          <Button
+            onClick={() => setActivePlatform("twitch")}
+            variant={activePlatform === "twitch" ? "default" : "outline"}
+            className={`gap-2 ${
+              activePlatform === "twitch"
+                ? "bg-purple-600 hover:bg-purple-700 text-white"
+                : ""
+            }`}
+          >
+            <Twitch className="w-4 h-4" />
+            Twitch
+          </Button>
+          <Button
+            onClick={() => setActivePlatform("youtube")}
+            variant={activePlatform === "youtube" ? "default" : "outline"}
+            className={`gap-2 ${
+              activePlatform === "youtube"
+                ? "bg-red-500 hover:bg-red-600 text-white"
+                : ""
+            }`}
+          >
+            <Youtube className="w-4 h-4" />
+            YouTube
+          </Button>
+          <Button
+            onClick={() => setActivePlatform("instagram")}
+            variant={activePlatform === "instagram" ? "default" : "outline"}
+            className={`gap-2 ${
+              activePlatform === "instagram"
+                ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600"
+                : ""
+            }`}
+          >
+            <Instagram className="w-4 h-4" />
+            Instagram
+          </Button>
+        </div>
+
+        {/* Twitch Section */}
+        {activePlatform === "twitch" && (
+          <section>
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-2">
+                <Twitch className="w-8 h-8 text-purple-600" />
+                <h2 className="text-3xl font-bold text-foreground">Clips de Twitch</h2>
+              </div>
+              <p className="text-muted-foreground">
+                Los mejores clips del canal <span className="font-semibold text-primary">@brayanthecrack</span>
+              </p>
             </div>
-            <p className="text-muted-foreground">
-              Los mejores reels de <span className="font-semibold text-primary">@ruitzolive</span> y <span className="font-semibold text-primary">@brayanthecrack_</span>
-            </p>
-          </div>
 
-          {/* Reels Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {instagramReels.map((reel) => (
-              <InstagramReelCard key={reel.id} reel={reel} />
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {instagramReels.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No hay reels disponibles en este momento.</p>
+            {/* Clips Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {twitchClips.map((clip) => (
+                <TwitchClipCard key={clip.id} clip={clip} />
+              ))}
             </div>
-          )}
-        </section>
 
-        {/* Divider */}
-        <div className="my-16 border-t border-border/50" />
+            {/* Empty State */}
+            {twitchClips.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No hay clips disponibles en este momento.</p>
+              </div>
+            )}
+          </section>
+        )}
 
-        {/* YouTube Videos Section */}
-        <section>
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-2">
-              <Youtube className="w-8 h-8 text-red-500" />
-              <h2 className="text-3xl font-bold text-foreground">Videos de YouTube</h2>
+        {/* YouTube Section */}
+        {activePlatform === "youtube" && (
+          <section>
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-2">
+                <Youtube className="w-8 h-8 text-red-500" />
+                <h2 className="text-3xl font-bold text-foreground">Videos de YouTube</h2>
+              </div>
+              <p className="text-muted-foreground">
+                Clips y videos de <span className="font-semibold text-primary">@RuitzoLIVE</span> y <span className="font-semibold text-primary">@RuitClips</span>
+              </p>
             </div>
-            <p className="text-muted-foreground">
-              Clips y videos de <span className="font-semibold text-primary">@RuitzoLIVE</span> y <span className="font-semibold text-primary">@RuitClips</span>
-            </p>
-          </div>
 
-          {/* Videos Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {youtubeVideos.map((video) => (
-              <YouTubeVideoCard key={video.id} video={video} />
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {youtubeVideos.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No hay videos disponibles en este momento.</p>
+            {/* Videos Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {youtubeVideos.map((video) => (
+                <YouTubeVideoCard key={video.id} video={video} />
+              ))}
             </div>
-          )}
-        </section>
+
+            {/* Empty State */}
+            {youtubeVideos.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No hay videos disponibles en este momento.</p>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Instagram Section */}
+        {activePlatform === "instagram" && (
+          <section>
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-2">
+                <Instagram className="w-8 h-8 text-pink-500" />
+                <h2 className="text-3xl font-bold text-foreground">Instagram Reels</h2>
+              </div>
+              <p className="text-muted-foreground">
+                Los mejores reels de <span className="font-semibold text-primary">@ruitzolive</span> y <span className="font-semibold text-primary">@brayanthecrack_</span>
+              </p>
+            </div>
+
+            {/* Reels Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {instagramReels.map((reel) => (
+                <InstagramReelCard key={reel.id} reel={reel} />
+              ))}
+            </div>
+
+            {/* Empty State */}
+            {instagramReels.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No hay reels disponibles en este momento.</p>
+              </div>
+            )}
+          </section>
+        )}
       </main>
 
       {/* Footer */}
