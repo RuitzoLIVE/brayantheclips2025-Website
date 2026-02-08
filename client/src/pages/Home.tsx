@@ -3,7 +3,8 @@ import { ClipCard } from "@/components/ClipCard";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { clips } from "@/lib/clipsData";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Twitch } from "lucide-react";
+import { ExternalLink, Twitch, Share2 } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -32,16 +33,24 @@ export default function Home() {
                 <p className="text-xs text-muted-foreground">Clips Gallery</p>
               </div>
             </div>
-            <Button
-              asChild
-              variant="default"
-              className="gap-2 bg-primary hover:bg-primary/90"
-            >
-              <a href="https://www.twitch.tv/brayanthecrack" target="_blank" rel="noopener noreferrer">
-                Seguir en Twitch
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </Button>
+            <div className="flex items-center gap-2">
+              <Link href="/redes-sociales">
+                <Button variant="outline" className="gap-2">
+                  <Share2 className="w-4 h-4" />
+                  Redes Sociales
+                </Button>
+              </Link>
+              <Button
+                asChild
+                variant="default"
+                className="gap-2 bg-primary hover:bg-primary/90"
+              >
+                <a href="https://www.twitch.tv/brayanthecrack" target="_blank" rel="noopener noreferrer">
+                  Seguir en Twitch
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
