@@ -50,7 +50,7 @@ export default function Home() {
       <section className="container py-12 md:py-16">
         <div className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>
-            Los Mejores Clips Chistosos
+            Los mejores clips de Brayan 2025
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
             Descubre los momentos más graciosos, absurdos y memorables del canal de brayanthecrack. Reacciones exageradas, jugadas épicas y interacciones con la comunidad que te harán reír.
