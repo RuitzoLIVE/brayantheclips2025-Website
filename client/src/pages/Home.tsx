@@ -3,11 +3,13 @@ import { ClipCard } from "@/components/ClipCard";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { clips } from "@/lib/clipsData";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Twitch, Share2, Link as LinkIcon } from "lucide-react";
+import { ExternalLink, Twitch, Share2, Link as LinkIcon, Search } from "lucide-react";
 import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Home() {
+  const { user } = useAuth();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredClips = useMemo(() => {
@@ -36,6 +38,12 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <ThemeToggle />
+              <Link href="/buscar">
+                <Button variant="outline" className="gap-2">
+                  <Search className="w-4 h-4" />
+                  Buscar
+                </Button>
+              </Link>
               <Link href="/enlaces">
                 <Button variant="outline" className="gap-2">
                   <LinkIcon className="w-4 h-4" />
