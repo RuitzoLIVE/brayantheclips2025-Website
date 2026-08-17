@@ -8,7 +8,7 @@ import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TrendingSection } from "@/components/TrendingSection";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { NativeComments } from "@/components/NativeComments";
+import { DisqusComments } from "@/components/DisqusComments";
 
 export default function Home() {
   const { user } = useAuth();
@@ -161,7 +161,10 @@ export default function Home() {
         </div>
       </section>
 
-      <NativeComments />
+      <DisqusComments
+        identifier="brayantheclips2025-home"
+        title="Los mejores clips de Brayan 2025"
+      />
 
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/50 backdrop-blur-sm">

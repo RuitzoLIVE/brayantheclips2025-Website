@@ -18,14 +18,8 @@
 - [x] Diagnosticar el iframe de Disqus en producción y reestructurar la sección Comunidad con HTML5 semántico.
 - [x] Sustituir el iframe directo por Universal Code oficial de Disqus dentro del contenedor HTML5 semántico y validar que renderice el hilo.
 - [x] Convertir las variables CSS globales de tema a hex/sRGB para eliminar el error parseColor de Universal Code.
-- [x] Crear la tabla `comments` en `drizzle/schema.ts` y aplicar la migración SQL.
-- [x] Implementar los endpoints tRPC de comentarios en `server/routers/comments.ts` (listar y crear; la eliminación queda fuera del alcance actual).
-- [x] Crear el componente nativo `client/src/components/NativeComments.tsx` con diseño HTML5 semántico y sin bordes visibles.
-- [x] Ampliar las pruebas de Vitest para validar listado público, autenticación y validación de contenido.
-- [x] Publicar el proyecto y verificar que el sistema de comentarios sin bordes funciona en producción.
-- [x] Corregir `comments.create` para rechazar comentarios vacíos tras `trim()`, incluidos los que contienen solo espacios, y cubrirlo con Vitest.
-- [x] Añadir estados de error visibles y reintento en `NativeComments` para fallos al listar o publicar comentarios.
-- [x] Añadir un botón de reintento explícito para fallos al publicar comentarios, conservando el texto escrito y validándolo con Vitest y build.
-- [x] Añadir una prueba Vitest de NativeComments que confirme el mensaje de error, el botón `Reintentar publicación` y la conservación del texto escrito.
-- [x] Resolver el desfase de despliegue: forzar un nuevo artefacto de producción y confirmar que los dominios públicos sirven NativeComments en lugar de Disqus.
-- [ ] Sincronizar el checkpoint final con el repositorio GitHub `RuitzoLIVE/brayantheclips2025-Website`.
+
+# Reversión de Comentarios Nativos a Disqus
+- [x] Restaurar DisqusComments en `client/src/pages/Home.tsx` conservando el diseño y el resto de funcionalidades.
+- [x] Validar que las pruebas de Disqus pasen correctamente y que la compilación y TypeScript no tengan errores.
+- [ ] Publicar la versión restaurada con Disqus y sincronizar con GitHub.
