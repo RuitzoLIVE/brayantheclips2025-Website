@@ -21,6 +21,8 @@ export interface YouTubeVideo {
   date: string;
   description: string;
   duration: string;
+  videoId?: string;
+  thumbnail?: string;
 }
 
 export interface TwitchClip {
@@ -32,6 +34,8 @@ export interface TwitchClip {
   date: string;
   description: string;
   duration: string;
+  clipId?: string;
+  thumbnail?: string;
 }
 
 export const instagramReels: InstagramReel[] = [
@@ -103,7 +107,9 @@ export const youtubeVideos: YouTubeVideo[] = [
     comments: 3,
     date: "3 weeks ago",
     description: "Clip cómico del streamer",
-    duration: "0:30"
+    duration: "0:30",
+    videoId: "Zg5iHmCFgFg",
+    thumbnail: "https://img.youtube.com/vi/Zg5iHmCFgFg/hqdefault.jpg"
   },
   {
     id: "2",
@@ -115,7 +121,9 @@ export const youtubeVideos: YouTubeVideo[] = [
     comments: 32,
     date: "2 weeks ago",
     description: "Compilación de videos random",
-    duration: "10:00"
+    duration: "10:00",
+    videoId: "e495Xq_AWZM",
+    thumbnail: "https://img.youtube.com/vi/e495Xq_AWZM/hqdefault.jpg"
   },
   {
     id: "3",
@@ -127,7 +135,9 @@ export const youtubeVideos: YouTubeVideo[] = [
     comments: 18,
     date: "1 week ago",
     description: "Clip del canal de Twitch de Ruitzo",
-    duration: "5:00"
+    duration: "5:00",
+    videoId: "f4xVDUysan0",
+    thumbnail: "https://img.youtube.com/vi/f4xVDUysan0/hqdefault.jpg"
   },
   {
     id: "4",

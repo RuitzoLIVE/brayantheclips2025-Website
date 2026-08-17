@@ -8,6 +8,7 @@ export interface Clip {
   clipper: string;
   url: string;
   game?: string;
+  thumbnail?: string;
 }
 
 export const clips: Clip[] = [

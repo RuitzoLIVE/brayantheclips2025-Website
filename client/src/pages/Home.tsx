@@ -6,7 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Twitch, Share2, Link as LinkIcon, Search } from "lucide-react";
 import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { TrendingSection } from "@/components/TrendingSection";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { NativeComments } from "@/components/NativeComments";
 
 export default function Home() {
   const { user } = useAuth();
@@ -97,6 +99,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trending Section */}
+      <TrendingSection />
+
       {/* Main Content */}
       <section className="container pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -156,12 +161,14 @@ export default function Home() {
         </div>
       </section>
 
+      <NativeComments />
+
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/50 backdrop-blur-sm">
         <div className="container py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2026 Ruitzo Studios Media. Canal: <span className="font-semibold text-primary">@brayanthecrack</span>. Todos los clips pertenecen a su respectivos creadores.
+              © 2026 Ruitzo Studios Media. Todos los clips pertenecen a su respectivos creadores.
             </p>
             <div className="flex items-center gap-4">
               <a

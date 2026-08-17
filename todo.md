@@ -1,0 +1,31 @@
+# Project TODO
+
+- [x] Integrar miniaturas reales en clips y videos
+- [x] Implementar lazy loading para miniaturas
+- [x] Integrar sistema de comentarios de Disqus con shortname brayantheclips2025
+- [x] Verificar compilación y pruebas del sistema de comentarios
+- [x] Guardar checkpoint de la integración de Disqus
+- [x] Revisar y corregir los errores reportados en el sitio (corregida la incompatibilidad de colores OKLCH y sustituido el embed dinámico)
+- [x] Configurar el shortname `brayantheclips2025` en Disqus y autorizar los dominios publicados
+- [x] Validar en el navegador publicado que el widget de Disqus renderiza correctamente
+- [x] Reemplazar la carga indefinida de Disqus por un estado de carga y un fallback visible con diagnóstico
+- [x] Validar y endurecer la detección de carga del widget de Disqus tras autorizar los dominios publicados (resuelto mediante iframe directo).
+- [x] Revisar la documentación oficial de Disqus Universal Code y ajustar la implementación del embed.
+- [x] Diagnosticar el error actual de carga del widget de Disqus en el sitio publicado y documentar la causa.
+- [x] Añadir un fallback de colores RGB/hex para evitar que Disqus falle al analizar variables OKLCH.
+- [x] Añadir cache-busting controlado al script embed.js de Disqus para evitar reutilizar una carga fallida en el navegador (obsoleto: embed.js fue retirado).
+- [x] Reemplazar la carga dinámica de Disqus por un iframe directo conservando el shortname técnico del foro.
+- [x] Diagnosticar el iframe de Disqus en producción y reestructurar la sección Comunidad con HTML5 semántico.
+- [x] Sustituir el iframe directo por Universal Code oficial de Disqus dentro del contenedor HTML5 semántico y validar que renderice el hilo.
+- [x] Convertir las variables CSS globales de tema a hex/sRGB para eliminar el error parseColor de Universal Code.
+- [x] Crear la tabla `comments` en `drizzle/schema.ts` y aplicar la migración SQL.
+- [x] Implementar los endpoints tRPC de comentarios en `server/routers/comments.ts` (listar y crear; la eliminación queda fuera del alcance actual).
+- [x] Crear el componente nativo `client/src/components/NativeComments.tsx` con diseño HTML5 semántico y sin bordes visibles.
+- [x] Ampliar las pruebas de Vitest para validar listado público, autenticación y validación de contenido.
+- [x] Publicar el proyecto y verificar que el sistema de comentarios sin bordes funciona en producción.
+- [x] Corregir `comments.create` para rechazar comentarios vacíos tras `trim()`, incluidos los que contienen solo espacios, y cubrirlo con Vitest.
+- [x] Añadir estados de error visibles y reintento en `NativeComments` para fallos al listar o publicar comentarios.
+- [x] Añadir un botón de reintento explícito para fallos al publicar comentarios, conservando el texto escrito y validándolo con Vitest y build.
+- [x] Añadir una prueba Vitest de NativeComments que confirme el mensaje de error, el botón `Reintentar publicación` y la conservación del texto escrito.
+- [x] Resolver el desfase de despliegue: forzar un nuevo artefacto de producción y confirmar que los dominios públicos sirven NativeComments en lugar de Disqus.
+- [ ] Sincronizar el checkpoint final con el repositorio GitHub `RuitzoLIVE/brayantheclips2025-Website`.

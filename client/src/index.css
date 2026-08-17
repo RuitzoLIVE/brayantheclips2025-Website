@@ -43,75 +43,75 @@
 }
 
 :root {
-  /* Twitch-inspired purple and vibrant colors */
-  --primary: oklch(0.55 0.25 280);
-  --primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-primary: oklch(0.50 0.28 280);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --chart-1: oklch(0.65 0.22 280);
-  --chart-2: oklch(0.55 0.25 280);
-  --chart-3: oklch(0.45 0.28 280);
-  --chart-4: oklch(0.35 0.25 280);
-  --chart-5: oklch(0.25 0.22 280);
+  /* Twitch-inspired purple and vibrant colors in legacy sRGB syntax for Disqus compatibility. */
+  --primary: #6842ff;
+  --primary-foreground: #fafafa;
+  --sidebar-primary: #5f31e6;
+  --sidebar-primary-foreground: #fafafa;
+  --chart-1: #8b5cf6;
+  --chart-2: #6842ff;
+  --chart-3: #4c1d95;
+  --chart-4: #3b176d;
+  --chart-5: #2b0f4f;
   --radius: 0.75rem;
-  --background: oklch(0.98 0.001 0);
-  --foreground: oklch(0.15 0.02 280);
-  --card: oklch(0.99 0.001 0);
-  --card-foreground: oklch(0.15 0.02 280);
-  --popover: oklch(0.99 0.001 0);
-  --popover-foreground: oklch(0.15 0.02 280);
-  --secondary: oklch(0.95 0.01 40);
-  --secondary-foreground: oklch(0.25 0.02 280);
-  --muted: oklch(0.92 0.01 280);
-  --muted-foreground: oklch(0.50 0.02 280);
-  --accent: oklch(0.65 0.25 30);
-  --accent-foreground: oklch(0.98 0.001 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.90 0.01 280);
-  --input: oklch(0.92 0.01 280);
-  --ring: oklch(0.55 0.25 280);
-  --sidebar: oklch(0.99 0.001 0);
-  --sidebar-foreground: oklch(0.15 0.02 280);
-  --sidebar-accent: oklch(0.95 0.01 40);
-  --sidebar-accent-foreground: oklch(0.15 0.02 280);
-  --sidebar-border: oklch(0.90 0.01 280);
-  --sidebar-ring: oklch(0.55 0.25 280);
+  --background: #fafafa;
+  --foreground: #241f3e;
+  --card: #ffffff;
+  --card-foreground: #241f3e;
+  --popover: #ffffff;
+  --popover-foreground: #241f3e;
+  --secondary: #f5efe8;
+  --secondary-foreground: #403952;
+  --muted: #eeeef5;
+  --muted-foreground: #6b6877;
+  --accent: #f28a4b;
+  --accent-foreground: #fafafa;
+  --destructive: #dc2626;
+  --destructive-foreground: #fefefe;
+  --border: #e5e4ec;
+  --input: #e6e4ec;
+  --ring: #6842ff;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #241f3e;
+  --sidebar-accent: #f5efe8;
+  --sidebar-accent-foreground: #403952;
+  --sidebar-border: #e5e4ec;
+  --sidebar-ring: #6842ff;
 }
 
 .dark {
-  --primary: oklch(0.65 0.22 280);
-  --primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-primary: oklch(0.60 0.25 280);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --background: oklch(0.12 0.02 280);
-  --foreground: oklch(0.92 0.01 280);
-  --card: oklch(0.18 0.02 280);
-  --card-foreground: oklch(0.92 0.01 280);
-  --popover: oklch(0.18 0.02 280);
-  --popover-foreground: oklch(0.92 0.01 280);
-  --secondary: oklch(0.22 0.02 280);
-  --secondary-foreground: oklch(0.85 0.01 280);
-  --muted: oklch(0.28 0.02 280);
-  --muted-foreground: oklch(0.70 0.02 280);
-  --accent: oklch(0.70 0.22 30);
-  --accent-foreground: oklch(0.12 0.02 280);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.25 0.02 280);
-  --input: oklch(0.22 0.02 280);
-  --ring: oklch(0.65 0.22 280);
-  --chart-1: oklch(0.65 0.22 280);
-  --chart-2: oklch(0.55 0.25 280);
-  --chart-3: oklch(0.45 0.28 280);
-  --chart-4: oklch(0.35 0.25 280);
-  --chart-5: oklch(0.25 0.22 280);
-  --sidebar: oklch(0.18 0.02 280);
-  --sidebar-foreground: oklch(0.92 0.01 280);
-  --sidebar-accent: oklch(0.28 0.02 280);
-  --sidebar-accent-foreground: oklch(0.92 0.01 280);
-  --sidebar-border: oklch(0.25 0.02 280);
-  --sidebar-ring: oklch(0.65 0.22 280);
+  --primary: #9b83ff;
+  --primary-foreground: #1c1830;
+  --sidebar-primary: #8e73f2;
+  --sidebar-primary-foreground: #1c1830;
+  --background: #1c1830;
+  --foreground: #e5e3ec;
+  --card: #2d274d;
+  --card-foreground: #e5e3ec;
+  --popover: #2d274d;
+  --popover-foreground: #e5e3ec;
+  --secondary: #37305a;
+  --secondary-foreground: #d8d2e5;
+  --muted: #473f6b;
+  --muted-foreground: #b7b2c9;
+  --accent: #f7a46d;
+  --accent-foreground: #1c1830;
+  --destructive: #ef7b5b;
+  --destructive-foreground: #fefefe;
+  --border: #514a70;
+  --input: #473f64;
+  --ring: #9b83ff;
+  --chart-1: #a78bfa;
+  --chart-2: #8b5cf6;
+  --chart-3: #6d28d9;
+  --chart-4: #5b21b6;
+  --chart-5: #3b176d;
+  --sidebar: #2d274d;
+  --sidebar-foreground: #e5e3ec;
+  --sidebar-accent: #473f6b;
+  --sidebar-accent-foreground: #d8d2e5;
+  --sidebar-border: #514a70;
+  --sidebar-ring: #9b83ff;
 }
 
 @layer base {
@@ -162,4 +162,38 @@
       max-width: 1280px;
     }
   }
+}
+
+/* Disqus compatibility: its embed color parser does not accept OKLCH values. */
+body {
+  color: #241f3e;
+  background-color: #fafafa;
+  border-color: #e5e4ec;
+  outline-color: #6842ff;
+}
+
+.dark body {
+  color: #e5e3ec;
+  background-color: #1c1830;
+  border-color: #514a70;
+  outline-color: #9b83ff;
+}
+
+/* Keep the Disqus host tree on legacy color syntax while preserving the app theme elsewhere. */
+.disqus-compatible-colors {
+  --card: #ffffff;
+  --border: #e5e4ec;
+  --foreground: #241f3e;
+  --primary: #6842ff;
+  --muted-foreground: #6b6877;
+  border-color: #e5e4ec;
+}
+
+.dark .disqus-compatible-colors {
+  --card: #2d274d;
+  --border: #514a70;
+  --foreground: #e5e3ec;
+  --primary: #9b83ff;
+  --muted-foreground: #b7b2c9;
+  border-color: #514a70;
 }

@@ -1,14 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { YouTubeVideo } from "@/lib/socialMediaData";
 import { ExternalLink, Eye, Clock, Youtube, Heart, MessageCircle } from "lucide-react";
+import { useLazyLoad } from "@/hooks/useLazyLoad";
 
 interface YouTubeVideoCardProps {
   video: YouTubeVideo;
 }
 
 export function YouTubeVideoCard({ video }: YouTubeVideoCardProps) {
+  const { ref, isVisible, isLoaded, onLoad } = useLazyLoad();
+
   return (
     <div className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+      {/* Thumbnail with Lazy Loading */}
+      {video.thumbnail && (
+        <div className="relative w-full h-40 bg-muted overflow-hidden">
+          <img
+            ref={ref}
+            src={isVisible ? video.thumbnail : undefined}
+            alt={video.title}
+            onLoad={onLoad}
+            className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-300 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          {!isLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted-foreground/10 animate-pulse" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      )}
+
       {/* YouTube Badge */}
       <div className="absolute top-3 right-3 z-10">
         <div className="flex items-center gap-2 rounded-full px-3 py-1 bg-red-500 text-white text-xs font-semibold">

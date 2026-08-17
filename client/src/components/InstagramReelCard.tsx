@@ -30,30 +30,34 @@ export function InstagramReelCard({ reel }: InstagramReelCardProps) {
         </p>
 
         {/* Metadata Grid */}
-        <div className="grid grid-cols-3 gap-3 text-sm py-3 border-y border-border/50">
+        <div className="grid grid-cols-3 gap-2 text-sm py-3 border-y border-border/50">
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
             </div>
-            <p className="font-semibold text-foreground">{reel.likes}</p>
+            <p className="font-semibold text-foreground text-xs">{reel.likes}</p>
             <p className="text-xs text-muted-foreground">Likes</p>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Share2 className="w-4 h-4 text-purple-500" />
+            </div>
+            <p className="font-semibold text-foreground text-xs">{reel.reposts}</p>
+            <p className="text-xs text-muted-foreground">Reposts</p>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <MessageCircle className="w-4 h-4 text-blue-500" />
             </div>
-            <p className="font-semibold text-foreground">{reel.reposts}</p>
-            <p className="text-xs text-muted-foreground">Reposts</p>
-          </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-1 mb-1">
-              <Share2 className="w-4 h-4 text-green-500" />
-            </div>
-            <p className="font-semibold text-foreground">{reel.shares}</p>
+            <p className="font-semibold text-foreground text-xs">{reel.shares}</p>
             <p className="text-xs text-muted-foreground">Shares</p>
           </div>
         </div>
-        <p className="text-xs text-muted-foreground text-center">{reel.date}</p>
+
+        {/* Additional Info */}
+        <div className="flex items-center justify-center text-xs text-muted-foreground">
+          <span>{reel.date}</span>
+        </div>
 
         {/* View Button */}
         <Button

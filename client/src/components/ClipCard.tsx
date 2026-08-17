@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Clip, categoryLabels } from "@/lib/clipsData";
 import { ExternalLink, Eye, Clock, User } from "lucide-react";
+import { useLazyLoad } from "@/hooks/useLazyLoad";
 
 interface ClipCardProps {
   clip: Clip;
 }
 
 export function ClipCard({ clip }: ClipCardProps) {
+  const { ref, isVisible, isLoaded, onLoad } = useLazyLoad();
+
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
       reactions: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
@@ -19,6 +22,25 @@ export function ClipCard({ clip }: ClipCardProps) {
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+      {/* Thumbnail with Lazy Loading */}
+      {clip.thumbnail && (
+        <div className="relative w-full h-40 bg-muted overflow-hidden">
+          <img
+            ref={ref}
+            src={isVisible ? clip.thumbnail : undefined}
+            alt={clip.title}
+            onLoad={onLoad}
+            className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-300 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          {!isLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted-foreground/10 animate-pulse" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      )}
+
       {/* Category Badge */}
       <div className="absolute top-3 right-3 z-10">
         <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${getCategoryColor(clip.category)}`}>

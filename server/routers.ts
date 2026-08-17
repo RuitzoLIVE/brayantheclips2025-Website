@@ -3,6 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { clipsRouter } from "./routers/clips";
+import { commentsRouter } from "./routers/comments";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -18,6 +19,7 @@ export const appRouter = router({
     }),
   }),
   clips: clipsRouter,
+  comments: commentsRouter,
 
   // TODO: add feature routers here, e.g.
   // todo: router({
